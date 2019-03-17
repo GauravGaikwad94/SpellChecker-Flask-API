@@ -1,4 +1,3 @@
-
 import os
 from flask import Flask, jsonify, request
 from symspellpy.symspellpy import SymSpell, Verbosity
@@ -39,18 +38,13 @@ def get_tasks():
                                             max_edit_distance_lookup)
     for suggestion in suggestions:
         correct_words.append(suggestion.term)
-        print("{}, {}, {}".format(suggestion.term, suggestion.distance,
-                                  suggestion.count))
     # lookup suggestions for single-word input strings
-
     suggestion_verbosity = Verbosity.CLOSEST  # TOP, CLOSEST, ALL
     suggestions = sym_spell.lookup(input_term, suggestion_verbosity,
                                    max_edit_distance_lookup)
     for suggestion in suggestions:
         if suggestion.term not in correct_words:
             correct_words.append(suggestion.term)
-            print("{}, {}, {}".format(suggestion.term, suggestion.distance,
-                                      suggestion.count))
     return jsonify(correct_words)
 
 
