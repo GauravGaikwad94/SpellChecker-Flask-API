@@ -1,6 +1,6 @@
 # SpellChecker-Flask-API
 
-Created REST API using flask framework to give suggestions for mispelled words. Here I have used symspellpy package to give suggestions for mispelled words.
+Created REST API using flask framework to give suggestions for mispelled words. Here I have used [symspellpy](https://pypi.org/project/symspellpy/) package to give suggestions for mispelled words.
 
 # Uses
 
